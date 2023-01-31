@@ -1,7 +1,7 @@
 public class PromptGenerator
 {
     public int _promptNumber;
-    public List<string> _tempPrompt = new List<string>();
+    public string _tempPrompt;
 
 
     public void QuestionPrompt(List<string> promptList)
@@ -14,7 +14,7 @@ public class PromptGenerator
     {
         Console.Write(promptList[index]);
         string promptAnswer = Console.ReadLine();
-        _tempPrompt.Add(promptList[index] + " " + promptAnswer);
+        _tempPrompt = promptList[index] + " " + promptAnswer;
     }
-    
+
 }

@@ -1,6 +1,6 @@
 using System.IO;
 
-public class File
+public class FileStorage
 {
 
 
@@ -15,7 +15,7 @@ public class File
         else
         {
             DateTime currentTimeDate = DateTime.Now;
-            string dateText = currentTimeDate.ToShortDateString();
+            string dateText = currentTimeDate.ToString("Mddyyyy");
             string fileName = dateText + ".txt";
 
             using (StreamWriter outputFile = new StreamWriter(fileName))
@@ -30,7 +30,40 @@ public class File
                 //string color = "Blue";
                 //outputFile.WriteLine($"My favorite color is {color}");
             }
+
+            Console.WriteLine($"Your file was save with the name {fileName}");
         }
         Console.WriteLine("");
+    }
+
+    public void LoadFile()
+    {
+
+        DateTime currentTimeDate = DateTime.Now;
+            string dateText = currentTimeDate.ToString("Mddyyyy");
+            string fileDateName = dateText + ".txt";
+
+        Console.Write($"Enter your file name ({fileDateName})");
+
+        string fileName = Console.ReadLine();
+
+        if (File.Exists(fileName))
+        {
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+
+            foreach (string line in lines)
+            {
+                _tempJournalEntry.Add(line);
+
+            }
+        }
+        else
+        {
+            Console.WriteLine("File does not exists");
+        }
+
+
+
+
     }
 }

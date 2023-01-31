@@ -11,6 +11,7 @@ class Program
         List<string> promptList = new List<string>(){
             "How was your day? ",
             "Who did you meet today? ",
+            "what are you thankful for? "
         };
 
         List<string> tempJournalEntry = new List<string>();
@@ -46,22 +47,32 @@ class Program
 
                     prompt.UniqueQuestion(promptList, index);
                     promptList.RemoveAt(index);
-                    tempJournalEntry = prompt._tempPrompt;
+                    tempJournalEntry.Add(prompt._tempPrompt);
+
+                    Console.WriteLine(tempJournalEntry.Count);
+
+                    foreach (string entries in tempJournalEntry)
+                    {
+                        Console.WriteLine(entries);
+                    }
                 }
             }
             else if (featureSelection == 2)
             {
+                //Console.WriteLine(tempJournalEntry.Count);
                 Journal journal = new Journal();
                 journal._tempJournalEntry = tempJournalEntry;
                 journal.Display();
             }
             else if (featureSelection == 3)
             {
-
+                FileStorage file = new FileStorage();
+                file.LoadFile();
+                tempJournalEntry = file._tempJournalEntry;
             }
             else if (featureSelection == 4)
             {
-                File file = new File();
+                FileStorage file = new FileStorage();
                 file._tempJournalEntry = tempJournalEntry;
                 file.SaveFile();
             }

@@ -18,4 +18,6 @@ public class Journal
         }
         Console.WriteLine("");
     }
+
+    
 }
