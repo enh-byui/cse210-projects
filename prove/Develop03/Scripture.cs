@@ -1,14 +1,16 @@
 public class Scripture
 {
-    //public string _reference;
-
-    public void GetScripture() {
-        Reference reference = new Reference(2);
-
-        string text = reference.GetScripture();
-
-        Console.WriteLine(text);
+    private string _reference;
+    private string _scriptureText;
 
 
+
+    public void GetRenderedText() {
+        Reference reference = new Reference("Nefi", 2, 1, 3); // Nefi 2:1-3
+
+        string learnScripture = reference.GetReference();
+
+
+        
     }
 }

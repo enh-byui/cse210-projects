@@ -1,24 +1,53 @@
 public class Reference
 {
-    private int _verse;
     private int _chapter;
     private string _book;
+    private int _start;
+    private int _end;
 
-    public Reference(){
-        _book = "Nefi";
-        _chapter = 3;
-        _verse = 1;
-        }
-
-    public Reference(int verse)
+    public Reference()
     {
         _book = "Nefi";
         _chapter = 3;
-        _verse = verse;
+        _start = 1;
+        _end = _start;
     }
 
-    public string GetScripture(){
-        string scripture = _book + " " + _chapter + " " + _verse;
-        return scripture;
+    public Reference(string book)
+    {
+        _book = book;
+        _chapter = 3;
+        _start = 1;
+        _end = _start;
     }
+
+    public Reference(string book, int chapter)
+    {
+        _book = book;
+        _chapter = chapter;
+        _start = 1;
+        _end = _start;
+    }
+
+    public Reference(string book, int chapter, int start)
+    {
+        _book = book;
+        _chapter = chapter;
+        _start = start;
+        _end = _start;
+    }
+
+    public Reference(string book, int chapter, int start, int end)
+    {
+        _book = book;
+        _chapter = chapter;
+        _start = start;
+        _end = end;
+    }
+
+    public string GetReference()
+    {
+        return _book + " " + _chapter + ":" + _start;
+    }
+
 }
