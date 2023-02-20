@@ -21,7 +21,6 @@ class Program
             featureSelection = int.Parse(Console.ReadLine());
             
             
-
             if (featureSelection == 1)
             {
 
