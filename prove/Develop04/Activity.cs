@@ -3,13 +3,13 @@ public class Activity
     private string _activityName;
     private string _activityDescription;
     private string _activityDurationText;
-    private int _activityDuration;
+    protected int _activityDuration;
 
     public Activity(string activityName, string activityDescription)
     {
         _activityName = activityName;
         _activityDescription = activityDescription;
-        _activityDurationText = "How long, in seconds, would you like for your session?";
+        _activityDurationText = "How long, in seconds, would you like for your session? ";
     }
     public string GetWelcomeMessage()
     {
@@ -53,7 +53,7 @@ public class Activity
         animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(4);
+        DateTime endTime = startTime.AddSeconds(2);
 
         int i = 0;
 

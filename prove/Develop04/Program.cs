@@ -44,7 +44,7 @@ class Program
                 Console.WriteLine(readyMessage);
                 breath.Spinner();
 
-
+                breath.StartActivity();
 
 
             }

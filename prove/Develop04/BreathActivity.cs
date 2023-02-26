@@ -1,42 +1,49 @@
 public class BreathActivity : Activity
 {
-    private int _seconds;
 
-    public BreathActivity(string activityName, string activityDescription) : base(activityName, activityDescription) {
+    public BreathActivity(string activityName, string activityDescription) : base(activityName, activityDescription)
+    {
 
     }
 
-    public string StartActivity()
+    public void StartActivity()
     {
 
+        Console.WriteLine("");
 
-          Console.WriteLine("Welcome to the Breathing Program!");
+        List<string> activityActions = new List<string>();
+        activityActions.Add("Breathe in... ");
+        activityActions.Add("Now breathe out... ");
 
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_activityDuration);
 
-            Console.WriteLine("Press Enter to start.");
+        int i = 0;
 
-            // Wait for the user to press Enter
-            Console.ReadLine();
-
-
-
-            for (int i = 0; i < 5; i++)
+        while (DateTime.Now < endTime)
         {
-            Console.WriteLine("Sleep for 2 seconds.");
-            Thread.Sleep(2000);
+            string s = activityActions[i];
+            Console.Write(s);
+            for (int counter = 4; counter >= 1; counter--)
+            {
+                Console.Write(counter);
+                Thread.Sleep(1000);
+                Console.Write("\b");
+            }
+            Console.Write("\b \b");
+            Console.WriteLine("");
+
+            i++;
+
+            if (i >= activityActions.Count)
+            {
+                i = 0;
+                Console.WriteLine("");
+            }
+
+            
+
         }
 
-        Console.WriteLine("Main thread exits.");
-
-
-
-            while (true)
-            {
-                Console.WriteLine("Breathe in...");
-                Thread.Sleep(4000);  // Wait for 4 seconds
-
-                Console.WriteLine("Breathe out...");
-                Thread.Sleep(4000);  // Wait for 4 seconds
-            }
     }
 }
