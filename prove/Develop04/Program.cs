@@ -20,34 +20,31 @@ class Program
             Console.WriteLine("  4. Quit");
             Console.Write("Select a choice from the menu: ");
             featureSelection = int.Parse(Console.ReadLine());
-
-            Console.Write("+");
-
-            Thread.Sleep(10000);
-
-            Console.Write("\b \b"); // Erase the + character
-            Console.Write("-"); // Replace it with the - character
-
-
-            Console.Write("Enter Seconds: ");
-            userSeconds = int.Parse(Console.ReadLine());
-
-//10
-
-            for (int i = 0; i < userSeconds; i++)
-            {
-
-                Console.WriteLine("Breathe in...");
-                Thread.Sleep(4000);  // Wait for 4 seconds
-
-                Console.WriteLine("Breathe out...");
-                Thread.Sleep(4000);  // Wait for 4 seconds
-
-            }
+            Console.Clear();
 
 
             if (featureSelection == 1)
             {
+                BreathActivity breath = new BreathActivity("Breath Activity", "This activity will help you relax by walking you through breating in and out slowly. Clear your mind and focus on your breathing.");
+                string welcomeMessage = breath.GetWelcomeMessage();
+                string activityDescription = breath.GetActivityDescription();
+                string activityDurationText = breath.GetActivityDurationText();
+                string readyMessage = breath.GetReadyMessage();
+
+                Console.WriteLine(welcomeMessage);
+                Console.WriteLine("");
+                Console.WriteLine(activityDescription);
+                Console.WriteLine("");
+                Console.Write(activityDurationText);
+
+                userSeconds = int.Parse(Console.ReadLine());
+                breath.SetActivityDuration(userSeconds);
+
+                Console.Clear();
+                Console.WriteLine(readyMessage);
+                breath.Spinner();
+
+
 
 
             }

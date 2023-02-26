@@ -1,13 +1,16 @@
-public class BreathActivity
+public class BreathActivity : Activity
 {
-    public int _welcomeText;
-    public int _userSeconds;
+    private int _seconds;
+
+    public BreathActivity(string activityName, string activityDescription) : base(activityName, activityDescription) {
+
+    }
 
     public string StartActivity()
     {
+
+
           Console.WriteLine("Welcome to the Breathing Program!");
-
-
 
 
             Console.WriteLine("Press Enter to start.");
