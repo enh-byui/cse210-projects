@@ -36,7 +36,7 @@ public class Activity
     }
 
     public string GetCompletedMessage(){
-        return $"You have completed another {_activityDuration} of the {_activityName}.";
+        return $"You have completed another {_activityDuration} seconds of the {_activityName}.";
     }
 
     public void SetActivityDuration(int seconds)
@@ -57,7 +57,7 @@ public class Activity
         animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(2);
+        DateTime endTime = startTime.AddSeconds(4);
 
         int i = 0;
 
