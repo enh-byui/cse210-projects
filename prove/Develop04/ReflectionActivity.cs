@@ -79,6 +79,7 @@ class ReflectionActivity : Activity
 
 
         Console.WriteLine("Well Done!");
+        Spinner();
         Console.WriteLine("");
     }
 

@@ -41,6 +41,7 @@ public class BreathActivity : Activity
             }
         }
         Console.WriteLine("Well Done!");
+        Spinner();
         Console.WriteLine("");
     }
 }

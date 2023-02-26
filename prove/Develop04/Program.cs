@@ -80,10 +80,37 @@ class Program
                 reflection.Spinner();
                 Console.Clear();
             }
-            else if (featureSelection == 4)
+            else if (featureSelection == 3)
             {
-                Console.WriteLine("See you tomorrow!");
+                ListingActivity listing = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                string welcomeMessage = listing.GetWelcomeMessage();
+                string activityDescription = listing.GetActivityDescription();
+                string activityDurationText = listing.GetActivityDurationText();
+                string readyMessage = listing.GetReadyMessage();
+
+                Console.WriteLine(welcomeMessage);
+                Console.WriteLine("");
+                Console.WriteLine(activityDescription);
+                Console.WriteLine("");
+                Console.Write(activityDurationText);
+
+                userSeconds = int.Parse(Console.ReadLine());
+                listing.SetActivityDuration(userSeconds);
+
+                Console.Clear();
+                Console.WriteLine(readyMessage);
+                listing.Spinner();
+
+                listing.StartActivity();
+
+                string completedMessage = listing.GetCompletedMessage();
+                Console.WriteLine(completedMessage);
+                listing.Spinner();
+                Console.Clear();
             }
+            else if (featureSelection == 4)
+            { }
+
             else
             {
                 Console.WriteLine("That is not a valid option");
