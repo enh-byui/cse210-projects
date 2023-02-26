@@ -35,6 +35,10 @@ public class Activity
         return "Get Ready...";
     }
 
+    public string GetCompletedMessage(){
+        return $"You have completed another {_activityDuration} of the {_activityName}.";
+    }
+
     public void SetActivityDuration(int seconds)
     {
         _activityDuration = seconds;
@@ -63,7 +67,7 @@ public class Activity
         {
             string s = animationStrings[i];
             Console.Write(s);
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
 
             i++;

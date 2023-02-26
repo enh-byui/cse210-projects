@@ -25,11 +25,12 @@ class Program
 
             if (featureSelection == 1)
             {
-                BreathActivity breath = new BreathActivity("Breath Activity", "This activity will help you relax by walking you through breating in and out slowly. Clear your mind and focus on your breathing.");
-                string welcomeMessage = breath.GetWelcomeMessage();
-                string activityDescription = breath.GetActivityDescription();
-                string activityDurationText = breath.GetActivityDurationText();
-                string readyMessage = breath.GetReadyMessage();
+                BreathActivity breathe = new BreathActivity("Breath Activity", "This activity will help you relax by walking you through breating in and out slowly. Clear your mind and focus on your breathing.");
+                string welcomeMessage = breathe.GetWelcomeMessage();
+                string activityDescription = breathe.GetActivityDescription();
+                string activityDurationText = breathe.GetActivityDurationText();
+                string readyMessage = breathe.GetReadyMessage();
+                string completedMessage = breathe.GetCompletedMessage();
 
                 Console.WriteLine(welcomeMessage);
                 Console.WriteLine("");
@@ -38,13 +39,17 @@ class Program
                 Console.Write(activityDurationText);
 
                 userSeconds = int.Parse(Console.ReadLine());
-                breath.SetActivityDuration(userSeconds);
+                breathe.SetActivityDuration(userSeconds);
+                Console.WriteLine($"Activity Duration {breathe.GetActivityDuration}");
 
                 Console.Clear();
                 Console.WriteLine(readyMessage);
-                breath.Spinner();
+                breathe.Spinner();
 
-                breath.StartActivity();
+                breathe.StartActivity();
+                Console.WriteLine(completedMessage);
+                breathe.Spinner();
+                Console.Clear();
 
 
             }

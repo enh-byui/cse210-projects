@@ -28,9 +28,8 @@ public class BreathActivity : Activity
             {
                 Console.Write(counter);
                 Thread.Sleep(1000);
-                Console.Write("\b");
+                Console.Write("\b \b");
             }
-            Console.Write("\b \b");
             Console.WriteLine("");
 
             i++;
@@ -40,10 +39,8 @@ public class BreathActivity : Activity
                 i = 0;
                 Console.WriteLine("");
             }
-
-            
-
         }
-
+        Console.WriteLine("Well Done!");
+        Console.WriteLine("");
     }
 }
