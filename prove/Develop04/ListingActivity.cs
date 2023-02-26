@@ -27,36 +27,22 @@ class ListingActivity : Activity
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_activityDuration);
-        string input = null;
 
-        while (DateTime.Now < endTime && string.IsNullOrEmpty(input))
+
+        while (DateTime.Now < endTime)
         {
-            if (Console.KeyAvailable)
-            {
-                ConsoleKeyInfo key = Console.ReadKey(true);
-                if (key.Key == ConsoleKey.Enter)
-                {
-                    Console.Write(">");
-                    input = Console.ReadLine();
-                    responses.Add(input);
-                }
-                else
-                {
-                    input += key.KeyChar;
-                }
-            }
+
+            Console.Write(">");
+            string response = Console.ReadLine();
+            responses.Add(response);
+
         }
 
-        if (string.IsNullOrEmpty(input))
-        {
-            Console.WriteLine($"You did not enter anything within {_activityDuration} seconds.");
-        }
-        else
-        {
-            Console.WriteLine($"You have listed {responses.Count} items!");
-            Console.WriteLine("Well Done!");
-            Spinner();
-            Console.WriteLine("");
-        }
+
+        Console.WriteLine($"You have listed {responses.Count} items!");
+        Console.WriteLine("Well Done!");
+        Spinner();
+        Console.WriteLine("");
+
     }
 }

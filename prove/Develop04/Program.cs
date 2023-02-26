@@ -9,7 +9,7 @@ class Program
         int userSeconds = 0;
         Console.Clear();
 
-        while (featureSelection >= 1 && featureSelection < 4)
+        while (featureSelection != 4)
         {
 
             Console.WriteLine("Menu Options:");
@@ -109,7 +109,9 @@ class Program
                 Console.Clear();
             }
             else if (featureSelection == 4)
-            { }
+            { 
+                Console.WriteLine("Ok, See you!");
+            }
 
             else
             {
