@@ -15,4 +15,12 @@ public class Goal
         return _goalList;
     }
 
+    public void PromptQuestions(){
+        return "What is the name of your goal?";
+    }
+
+    
+
+
+
 }

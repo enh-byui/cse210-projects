@@ -70,10 +70,12 @@ class Program
             }
             else if (goalSelection == 2)
             {
+
+                Console.WriteLine("The goals are:")
                 List<string> goals = goal.GetGoals();
                 for (int i = 0; i < goals.Count; i++)
                 {
-                    Console.WriteLine($"{i}: {goals[i]}");
+                    Console.WriteLine($"{i}. {goals[i]}");
                 }
 
 

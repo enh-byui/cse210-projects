@@ -4,7 +4,9 @@ public class SimpleGoal : Goal
 
     public void SetSimpleGoal()
     {
-        Console.Write("What is the name of your goal? ");
+
+        
+        Console.Write($"GetGoalName");
         string goalName = Console.ReadLine();
         Console.Write("What is a short description of it? ");
         string goalDescription = Console.ReadLine();
