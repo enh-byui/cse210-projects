@@ -1,30 +1,18 @@
 public class SimpleGoal : Goal
 {
-    private string _simpleGoal;
-    private string _goalType;
+    private string _goal;
 
-    public SimpleGoal()
+    public void SetGoal(string goal)
     {
-        _goalType = "Simple Goal";
+        _goal = goal;
     }
 
-    public void SetSimpleGoal()
+    public override string GetGoal()
     {
-
-        
-        Console.Write($"What is the name of your goal? ");
-        string goalName = Console.ReadLine();
-        Console.Write("What is a short description of it? ");
-        string goalDescription = Console.ReadLine();
-        Console.Write("What is the amount of points associated with this goal? ");
-        int goalSelection = int.Parse(Console.ReadLine());
-
-        string goal = $"[ ] {goalName}, {goalDescription}, {goalSelection}";
-        _simpleGoal = goal;
-
+        string goalName = GetGoalName();
+        string goalDescription = GetGoalDescription();
+        int goalValue = GetGoalValue();
+        return $"[] {goalName} ({goalDescription})";
     }
 
-    public string GetSimpleGoal(){
-        return _simpleGoal;
-    }
 }

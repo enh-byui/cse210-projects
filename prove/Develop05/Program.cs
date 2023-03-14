@@ -6,7 +6,8 @@ class Program
     {
         Console.Clear();
         Score score = new Score();
-        Goal goal = new Goal();
+        List<Goal> goals = new List<Goal>();
+
         int currentScore = score.GetScore();
 
         while (true)
@@ -42,24 +43,41 @@ class Program
 
                     if (goalTypeSelection == 1)
                     {
+                        Console.Write($"What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int goalValue = int.Parse(Console.ReadLine());
+
                         SimpleGoal simpleGoal = new SimpleGoal();
-                        simpleGoal.SetSimpleGoal();
-                        string simple = simpleGoal.GetSimpleGoal();
-                        goal.AddGoal(simple);
+                        simpleGoal.SetGoalName(goalName);
+                        simpleGoal.SetGoalDescription(goalDescription);
+                        simpleGoal.SetGoalValue(goalValue);
+                        
+                        goals.Add(simpleGoal);
+
                     }
                     else if (goalTypeSelection == 2)
                     {
+                        Console.Write($"What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int goalValue = int.Parse(Console.ReadLine());
+
                         EternalGoal eternalGoal = new EternalGoal();
-                        eternalGoal.SetEternalGoal();
-                        string eternal = eternalGoal.GetEternalGoal();
-                        goal.AddGoal(eternal);
+                        eternalGoal.SetGoalName(goalName);
+                        eternalGoal.SetGoalDescription(goalDescription);
+                        eternalGoal.SetGoalValue(goalValue);
+
+                        goals.Add(eternalGoal);
+
                     }
                     else if (goalTypeSelection == 3)
                     {
-                        ChecklistGoal checklistGoal = new ChecklistGoal();
-                        checklistGoal.SetChecklistGoal();
-                        string eternal = checklistGoal.GetChecklistGoal();
-                        goal.AddGoal(eternal);
+
                     }
                     else if (goalTypeSelection == 0)
                     {
@@ -75,10 +93,18 @@ class Program
             {
 
                 Console.WriteLine("The goals are:");
-                List<string> goals = goal.GetGoals();
+
+                foreach (Goal goal in goals){
+
+                    string goalText = goal.GetGoal();
+                    Console.WriteLine($"{goalText}");
+
+                }
+
+
                 for (int i = 0; i < goals.Count; i++)
                 {
-                    Console.WriteLine($"{i+1}. {goals[i]}");
+                    Console.WriteLine($"{i + 1}. {goals[i]}");
                 }
 
 

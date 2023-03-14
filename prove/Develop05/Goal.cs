@@ -1,32 +1,43 @@
-public class Goal
+public abstract  class Goal
 {
-    protected List<string> _goalList = new List<string>();
+    protected string _goalName;
+    protected string _goalDescription;
+    protected int _goalValue;
     private string _goal;
     public Goal()
     {
-
     }
 
-    public void AddGoal(string goal)
+    public string GetGoalName()
     {
-        _goalList.Add(goal);
+        return _goalName;
     }
 
-    public List<string> GetGoals(){
-        return _goalList;
+    public void SetGoalName(string goalName)
+    {
+        _goalName = goalName;
     }
 
-    public void PromptQuestions(){
-        Console.Write($"What is the name of your goal? ");
-        string goalName = Console.ReadLine();
-        Console.Write("What is a short description of it? ");
-        string goalDescription = Console.ReadLine();
-        Console.Write("What is the amount of points associated with this goal? ");
-        int goalSelection = int.Parse(Console.ReadLine());
-
-        string goal = $"[ ] {goalName}, {goalDescription}, {goalSelection}";
-        _goal = goal;
+    public string GetGoalDescription()
+    {
+        return _goalDescription;
     }
 
+    public void SetGoalDescription(string goalDescription)
+    {
+        _goalDescription = goalDescription;
+    }
+
+    public int GetGoalValue()
+    {
+        return _goalValue;
+    }
+
+    public void SetGoalValue(int goalValue)
+    {
+        _goalValue = goalValue;
+    }
+
+    public abstract string GetGoal();
 
 }
