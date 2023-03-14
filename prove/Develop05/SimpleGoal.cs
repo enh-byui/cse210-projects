@@ -21,6 +21,7 @@ public class SimpleGoal : Goal
         if(_goalStatus == "True")
         {
             goalText = $"[X] {goalName} ({goalDescription})";
+            _goalValue = 0;
         }
 
         return goalText;

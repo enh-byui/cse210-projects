@@ -40,8 +40,6 @@ public class ChecklistGoal : Goal
         if (_goalAttempts == _goalTries)
         {
             goalText = $"[X] {goalName} ({goalDescription}) -- Currently completed: {_goalTries}/{_goalAttempts}";
-            int goalValuePlusBonus = _goalValue + _goalBonus;
-            SetGoalValue(goalValuePlusBonus);
         }
 
         return goalText;
@@ -57,9 +55,17 @@ public class ChecklistGoal : Goal
 
     public override void SetCompletedGoal()
     {
-        if (_goalTries < _goalAttempts)
+        _goalTries++;
+
+        if (_goalTries == _goalAttempts)
         {
-            _goalTries++;
+            int goalValueBonus = _goalValue + _goalBonus;
+            SetGoalValue(goalValueBonus);
+        }
+        else if(_goalTries > _goalAttempts)
+        {
+            SetGoalValue(0);
+            SetGoalTries(_goalAttempts);
         }
     }
 }

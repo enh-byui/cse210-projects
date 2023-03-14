@@ -1,5 +1,5 @@
-145
-SimpleGoal:goal 1:desc 1:10:True
-EternalGoal:goal 2:desc 2:11
-ChecklistGoal:goal 3:desc 3:12:2:100:0
-SimpleGoal:Third goal:goal goal goal:100:True
+250
+SimpleGoal:Test 1:Desc 1:0:True
+SimpleGoal:Test 2:Goal 2:0:True
+EternalGoal:Temple:The temple:50
+ChecklistGoal:Checklist Goal:A checklist goal:0:3:100:3

@@ -12,6 +12,7 @@ class Program
 
         while (true)
         {
+            Console.WriteLine("");
             Console.WriteLine($"You have {currentScore} points.");
             Console.WriteLine("");
 
@@ -189,7 +190,6 @@ class Program
                     else
                     {
                         score.SetScore(int.Parse(parts[0]));
-                        Console.WriteLine($"Current score from file {parts[0]}");
                         currentScore = score.GetScore();
                     }
                 }
@@ -215,10 +215,34 @@ class Program
 
                 goals[goalIndex].SetCompletedGoal();
 
-                int goalValue = goals[goalIndex].GetGoalValue();
+                int goalCurrentValue = goals[goalIndex].GetGoalValue();
 
-                score.SetScore(goalValue);
+                score.SetScore(goalCurrentValue);
                 currentScore = score.GetScore();
+
+            }
+            else if (goalSelection == 6)
+            {
+
+                Console.WriteLine("The goals are: ");
+                int indexMenu = 0;
+
+                foreach (Goal goal in goals)
+                {
+                    indexMenu++;
+
+                    string goalText = goal.GetGoalName();
+                    Console.WriteLine($"{indexMenu}. {goalText}");
+                }
+                Console.WriteLine("");
+
+                Console.Write("Which goal do you want to delete? ");
+                int goalSelected = int.Parse(Console.ReadLine());
+                int goalIndex = goalSelected - 1;
+
+                goals.RemoveAt(goalIndex);
+
+                Console.WriteLine("Your goal was successfully deleted");
 
             }
             else if (goalSelection == 7)
