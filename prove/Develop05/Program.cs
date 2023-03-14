@@ -42,21 +42,24 @@ class Program
 
                     if (goalTypeSelection == 1)
                     {
-
                         SimpleGoal simpleGoal = new SimpleGoal();
                         simpleGoal.SetSimpleGoal();
                         string simple = simpleGoal.GetSimpleGoal();
                         goal.AddGoal(simple);
-
                     }
                     else if (goalTypeSelection == 2)
                     {
-
-
+                        EternalGoal eternalGoal = new EternalGoal();
+                        eternalGoal.SetEternalGoal();
+                        string eternal = eternalGoal.GetEternalGoal();
+                        goal.AddGoal(eternal);
                     }
                     else if (goalTypeSelection == 3)
                     {
-
+                        ChecklistGoal checklistGoal = new ChecklistGoal();
+                        checklistGoal.SetChecklistGoal();
+                        string eternal = checklistGoal.GetChecklistGoal();
+                        goal.AddGoal(eternal);
                     }
                     else if (goalTypeSelection == 0)
                     {
@@ -71,11 +74,11 @@ class Program
             else if (goalSelection == 2)
             {
 
-                Console.WriteLine("The goals are:")
+                Console.WriteLine("The goals are:");
                 List<string> goals = goal.GetGoals();
                 for (int i = 0; i < goals.Count; i++)
                 {
-                    Console.WriteLine($"{i}. {goals[i]}");
+                    Console.WriteLine($"{i+1}. {goals[i]}");
                 }
 
 

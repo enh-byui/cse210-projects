@@ -1,14 +1,14 @@
-public class SimpleGoal : Goal
+public class EternalGoal : Goal
 {
-    private string _simpleGoal;
+    private string _eternalGoal;
     private string _goalType;
 
-    public SimpleGoal()
+    public EternalGoal()
     {
-        _goalType = "Simple Goal";
+        _goalType = "Eternal Goal";
     }
 
-    public void SetSimpleGoal()
+    public void SetEternalGoal()
     {
 
         
@@ -20,11 +20,11 @@ public class SimpleGoal : Goal
         int goalSelection = int.Parse(Console.ReadLine());
 
         string goal = $"[ ] {goalName}, {goalDescription}, {goalSelection}";
-        _simpleGoal = goal;
+        _eternalGoal = goal;
 
     }
 
-    public string GetSimpleGoal(){
-        return _simpleGoal;
+    public string GetEternalGoal(){
+        return _eternalGoal;
     }
 }
