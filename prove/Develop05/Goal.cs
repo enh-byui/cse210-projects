@@ -1,12 +1,8 @@
-public abstract  class Goal
+public abstract class Goal
 {
     protected string _goalName;
     protected string _goalDescription;
     protected int _goalValue;
-    private string _goal;
-    public Goal()
-    {
-    }
 
     public string GetGoalName()
     {
@@ -40,4 +36,7 @@ public abstract  class Goal
 
     public abstract string GetGoal();
 
+    public abstract string GetGoalToSave();
+
+    public abstract void SetCompletedGoal();
 }

@@ -1,18 +1,41 @@
 public class SimpleGoal : Goal
 {
-    private string _goal;
-
-    public void SetGoal(string goal)
+    protected string _goalStatus;
+    public SimpleGoal()
     {
-        _goal = goal;
+        _goalStatus = "False";
     }
 
+    public void SetGoalStatus(string status)
+    {
+        _goalStatus = status;
+    }
     public override string GetGoal()
     {
         string goalName = GetGoalName();
         string goalDescription = GetGoalDescription();
         int goalValue = GetGoalValue();
-        return $"[] {goalName} ({goalDescription})";
+
+        string goalText = $"[ ] {goalName} ({goalDescription})";
+
+        if(_goalStatus == "True")
+        {
+            goalText = $"[X] {goalName} ({goalDescription})";
+        }
+
+        return goalText;
     }
 
+    public override string GetGoalToSave()
+    {
+        string goalName = GetGoalName();
+        string goalDescription = GetGoalDescription();
+        int goalValue = GetGoalValue();
+        return $"SimpleGoal:{goalName}:{goalDescription}:{goalValue}:{_goalStatus}";
+    }
+
+    public override void SetCompletedGoal()
+    {
+        _goalStatus = "True";
+    }
 }

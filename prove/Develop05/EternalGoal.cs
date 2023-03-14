@@ -1,14 +1,23 @@
 public class EternalGoal : Goal
 {
-    private string _goal;
-
-    public void SetGoal(string goal)
-    {
-        _goal = goal;
-    }
-
     public override string GetGoal()
     {
-        return _goal;
+        string goalName = GetGoalName();
+        string goalDescription = GetGoalDescription();
+        int goalValue = GetGoalValue();
+        return $"[ ] {goalName} ({goalDescription})";
+    }
+
+    public override string GetGoalToSave()
+    {
+        string goalName = GetGoalName();
+        string goalDescription = GetGoalDescription();
+        int goalValue = GetGoalValue();
+        return $"EternalGoal:{goalName}:{goalDescription}:{goalValue}";
+    }
+
+    public override void SetCompletedGoal()
+    {
+
     }
 }

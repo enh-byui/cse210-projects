@@ -9,7 +9,7 @@ public class Score
 
     public void SetScore(int score)
     {
-        _score = _score + _score;
+        _score = _score + score;
     }
 
     public int GetScore()
