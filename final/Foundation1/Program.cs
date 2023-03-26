@@ -20,9 +20,14 @@ class Program
         videos[1].AddComment("Joshua", "Ready to start my own project");
         videos[1].AddComment("Normand", "Super easy with this tips");
 
-        videos[3].AddComment("Mark", "These tips are really helpful, thanks!");
-        videos[3].AddComment("Olivia", "I'm going to try out these exercises tomorrow!");
-        videos[3].AddComment("Lucas", "Thanks for sharing your knowledge, Mike.");
+        videos[3].AddComment("Joe", "I can't wait to start");
+        videos[3].AddComment("Nancy", "I'm going to try out these tips!");
+        videos[3].AddComment("Linda", "Thanks for sharing");
+
+        Console.WriteLine();
+        Console.WriteLine("YouTube Videos with comments");
+        Console.WriteLine();
+        
 
         foreach (Video video in videos)
         {
