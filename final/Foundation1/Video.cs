@@ -11,7 +11,7 @@ public class Video
         Comments.Add(comment);
     }
 
-    public int GetNumComments()
+    public int CountComments()
     {
         return Comments.Count;
     }
@@ -21,7 +21,7 @@ public class Video
         Console.WriteLine("Title: " + Title);
         Console.WriteLine("Author: " + Author);
         Console.WriteLine("Length: " + Length + " seconds");
-        Console.WriteLine("Number of comments: " + GetNumComments());
+        Console.WriteLine("Number of comments: " + CountComments());
 
         foreach (Comment comment in Comments)
         {
