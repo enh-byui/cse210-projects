@@ -7,7 +7,8 @@ class Reception : Event
         _rsvpEmail = rsvpEmail;
     }
 
-    public override string GetFullDetails() {
+    public override string GetFullDetails()
+    {
         return $"{GetStandardDetails()}\nRSVP Email: {_rsvpEmail}";
     }
 

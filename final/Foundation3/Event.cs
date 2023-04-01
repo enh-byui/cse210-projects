@@ -27,7 +27,7 @@ class Event
 
     public virtual string GetShortDescription()
     {
-        return $"{GetType().Name}: {_title} - {_date.ToShortDateString()}";
+        return $"{_title} - {_date.ToShortDateString()}";
     }
 
 
