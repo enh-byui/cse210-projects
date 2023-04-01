@@ -1,13 +1,24 @@
-public class Activity
+public class Swimming : Activity
 {
-    private DateTime _date;
-    private int _minutes;
+    private int laps;
 
-    public Activity(DateTime date, int minutes)
+    public Swimming(DateTime date, int minutes, int laps) : base(date, minutes)
     {
-        _date = date;
-        _minutes = minutes;
+        this.laps = laps;
     }
 
+    public override double GetDistance()
+    {
+        return laps * 50 / 1000;
+    }
 
+    public override double GetSpeed()
+    {
+        return (GetDistance() / _minutes) * 60;
+    }
+
+    public override double GetPace()
+    {
+        return 60 / GetSpeed();
+    }
 }
