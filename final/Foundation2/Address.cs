@@ -1,41 +1,45 @@
-public class Address
-{
-    private string _street;
-    private string _city;
-    private string _state;
-    private string _country;
-
-    public Address(string street, string city, string state, string country)
+class Address
     {
-        this._street = street;
-        this._city = city;
-        this._state = state;
-        this._country = country;
+        private string _street;
+        private string _city;
+        private string _state;
+        private string _country;
+
+        public Address(string street, string city, string state, string country)
+        {
+            _street = street;
+            _city = city;
+            _state = state;
+            _country = country;
+        }
+
+        public string GetStreet()
+        {
+            return _street;
+        }
+
+        public string GetCity()
+        {
+            return _city;
+        }
+
+        public string GetState()
+        {
+            return _state;
+        }
+
+        public string GetCountry()
+        {
+            return _country;
+        }
+
+        public bool IsInUSA()
+        {
+            return _country.Equals("USA", StringComparison.OrdinalIgnoreCase);
+        }
+
+        public string GetFullAddress()
+        {
+            return $"{_street}\n{_city}, {_state} {_country}";
+        }
     }
-
-    public string Country
-    {
-        get { return _country; }
-        set { _country = value; }
-    }
-
-    public string State
-    {
-        get { return _state; }
-        set { _state = value; }
-    }
-
-    public string City
-    {
-        get { return _city; }
-        set { _city = value; }
-    }
-
-    public string Street
-    {
-        get { return _street; }
-        set { _street = value; }
-    }
-
-
-}
