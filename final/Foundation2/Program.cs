@@ -10,9 +10,9 @@ class Program
             Customer customer2 = new Customer("Jane Smith", customer2Address);
 
             // Create products
-            Product product_1 = new Product("Widget", "W001", 10.0, 2);
-            Product product_2 = new Product("Gizmo", "G001", 20.0, 1);
-            Product product_3 = new Product("Thingamajig", "T001", 15.0, 3);
+            Product product_1 = new Product("Personal PC", "PC001", 10.0, 2);
+            Product product_2 = new Product("Zegga", "ZG001", 20.0, 1);
+            Product product_3 = new Product("Intendo", "IT001", 15.0, 3);
 
             // Create orders
             Order order_1 = new Order(new Product[] { product_1, product_2 }, customer1);
